@@ -1,0 +1,402 @@
+/* =========================================================
+   FLO BANK Base Style Sheet
+   파일명: base.css
+   설명: 모든 페이지 공통 적용 (reset + header + footer)
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+
+/* 상단 탑바 */
+.top-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 80px;
+  font-size: 14px;
+}
+
+.top-bar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #555;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.right-menu a:hover {
+  color: #4A6FA5; 
+}
+
+/* 메인 네비게이션 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* NAV 메뉴 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 1100px;
+  background: #fff;
+  border-top: 2px solid #4A6FA5;
+  display: none;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 30px 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 드롭다운 - 컬럼 */
+.menu-column {
+  min-width: 180px;
+}
+
+.menu-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #4A6FA5;
+}
+
+/* 드롭다운 - 하위 목록 */
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-column li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #4A6FA5;
+}
+
+/* 폰트어썸 네비 아이콘 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #4A6FA5;
+}
+
+/* ------------------------------------
+   🔹 푸터 영역
+------------------------------------ */
+
+footer {
+  margin-top: 60px;
+}
+
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e5e5e5; 
+  box-shadow: none;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 푸터 링크 */
+.footer-links {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* 로고 + 저작권 */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-logos img {
+  height: 35px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* 고객센터 연락처 */
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-right strong {
+  color: #222;
+  font-weight: 700;
+}
+
+/* 하단 버튼 */
+.footer-bottom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.bottom-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bottom-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+
+/* -----------------------------/* -----------------------------/* -----------------------------
+///. qna_list
+/* -----------------------------/* -----------------------------/* -----------------------------
+
+/* -----------------------------
+   Layout
+------------------------------ */
+.customer-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 80px auto;
+  align-items: flex-start;
+}
+
+/* -----------------------------
+   Sidebar
+------------------------------ */
+.customer-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: fit-content;
+}
+
+.customer-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 20px;
+}
+
+.customer-category {
+  list-style: none;
+  padding: 0;
+}
+
+.customer-category > li {
+  margin-bottom: 14px;
+}
+
+.customer-category > li > a {
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.customer-category > li > a:hover {
+  color: #2C5DE5;
+}
+
+/* 세부 카테고리 */
+.customer-subcategory {
+  list-style: none;
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.customer-subcategory li {
+  margin-bottom: 6px;
+}
+
+.customer-subcategory a {
+  color: #666;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.customer-subcategory a:hover {
+  color: #2C5DE5;
+}
+
+/* ✅ Active 상태 */
+.customer-subcategory li.active a {
+  color: #2C5DE5;
+  font-weight: 700;
+}
+
+/* -----------------------------
+   Content
+------------------------------ */
+.customer-content {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  min-height: 500px;
+}
+
+.customer-content h2 {
+  font-size: 20px;
+  color: #22304E;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.customer-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
