@@ -1,0 +1,616 @@
+/* =========================================================
+   FX Guide Style Sheet
+   파일명: fxguide.css
+   설명: 외환가이드 섹션에 특화된 헤더/푸터/사이드바 및 본문 스타일
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+}
+
+body {
+  background: #f5f8fb;
+  color: #1e2a3a;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+.top-bar {
+  background: linear-gradient(90deg, rgba(6, 59, 116, 0.08), rgba(16, 103, 163, 0.08));
+  border-bottom: 1px solid rgba(10, 35, 64, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 90px;
+  font-size: 13px;
+  color: #46536b;
+}
+
+.top-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.top-bar a:hover {
+  color: #0f559d;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 90px;
+  background: #0a2240;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 12px 24px rgba(10, 34, 64, 0.08);
+}
+
+.logo img {
+  height: 44px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  position: relative;
+  padding: 14px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #12a7e6, #35d1b5);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  border-radius: 999px;
+}
+
+.nav-menu > li:hover > a,
+.nav-menu > li > a:focus {
+  color: #ffffff;
+}
+
+.nav-menu > li:hover > a::after,
+.nav-menu > li > a:focus::after {
+  transform: scaleX(1);
+}
+
+.nav-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-icons a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #ffffff;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  width: 1080px;
+  background: #fff;
+  padding: 28px 48px;
+  display: none;
+  gap: 56px;
+  border-radius: 18px;
+  box-shadow: 0 24px 50px rgba(19, 41, 78, 0.15);
+  border: 1px solid rgba(12, 57, 133, 0.08);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.menu-column {
+  min-width: 170px;
+}
+
+.menu-column h4 {
+  font-size: 15px;
+  color: #0a2240;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #0f559d;
+}
+
+.menu-column ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #4f5d78;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #0f559d;
+}
+
+/* ------------------------------------
+   🔹 메인 레이아웃
+------------------------------------ */
+.fxguide-container {
+  max-width: 1200px;
+  margin: 48px auto 80px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+}
+
+.fxguide-sidebar {
+  background: linear-gradient(188deg, #0c3d7a, #1584b8);
+  border-radius: 20px;
+  color: #fff;
+  padding: 32px 28px;
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  box-shadow: 0 22px 40px rgba(7, 44, 92, 0.25);
+}
+
+.fxguide-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.fxguide-sidebar nav {
+  display: grid;
+  gap: 24px;
+}
+
+.fxguide-group {
+  list-style: none;
+}
+
+.fxguide-group-title {
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.fxguide-link-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.fxguide-link-list a {
+  text-decoration: none;
+  display: block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.fxguide-link-list a:hover,
+.fxguide-link-list a:focus {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(4px);
+}
+
+.fxguide-link-list a.active {
+  background: rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(8, 35, 74, 0.25);
+}
+
+.fxguide-content {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 48px;
+  box-shadow: 0 24px 50px rgba(9, 30, 66, 0.12);
+  display: grid;
+  gap: 28px;
+}
+
+.fxguide-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fxguide-heading h1 {
+  font-size: 32px;
+  color: #0a2240;
+}
+
+.fxguide-tagline {
+  font-size: 15px;
+  color: #4f5d78;
+}
+
+.fxguide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #12a7e6, #35d1b5);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.fxguide-highlight {
+  border-left: 4px solid #12a7e6;
+  background: linear-gradient(90deg, rgba(18, 167, 230, 0.08), rgba(53, 209, 181, 0.08));
+  padding: 18px 24px;
+  border-radius: 16px;
+  color: #1c2f49;
+  font-weight: 500;
+}
+
+.fxguide-card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.fxguide-card {
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(12, 57, 133, 0.08);
+  box-shadow: 0 18px 36px rgba(10, 34, 64, 0.1);
+  background: linear-gradient(160deg, rgba(12, 61, 122, 0.08), rgba(12, 61, 122, 0));
+  display: grid;
+  gap: 12px;
+}
+
+.fxguide-card h3 {
+  font-size: 18px;
+  color: #0a2240;
+}
+
+.fxguide-card p {
+  font-size: 14px;
+  color: #42506a;
+}
+
+.fxguide-section h2 {
+  font-size: 22px;
+  color: #0a2240;
+  margin-bottom: 12px;
+}
+
+.fxguide-section p {
+  color: #42506a;
+  font-size: 15px;
+}
+
+.fxguide-section ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.fxguide-section ul li {
+  padding-left: 20px;
+  position: relative;
+  color: #42506a;
+  font-size: 14px;
+}
+
+.fxguide-section ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #35d1b5;
+  font-size: 18px;
+}
+
+.fxguide-step-list {
+  counter-reset: step;
+  display: grid;
+  gap: 16px;
+}
+
+.fxguide-step-list li {
+  list-style: none;
+  background: rgba(12, 57, 133, 0.05);
+  padding: 18px 22px 18px 60px;
+  border-radius: 18px;
+  position: relative;
+  color: #364760;
+}
+
+.fxguide-step-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #12a7e6, #35d1b5);
+  color: #fff;
+  font-weight: 700;
+}
+
+.fxguide-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.fxguide-table thead {
+  background: #0a2240;
+  color: #fff;
+}
+
+.fxguide-table th,
+.fxguide-table td {
+  padding: 14px 18px;
+  border: 1px solid rgba(12, 57, 133, 0.1);
+  text-align: left;
+}
+
+.fxguide-table tbody tr:nth-child(even) {
+  background: rgba(12, 57, 133, 0.05);
+}
+
+.fxguide-caption {
+  font-size: 13px;
+  color: #647290;
+  margin-top: 6px;
+}
+
+.fxguide-callout {
+  border-radius: 20px;
+  padding: 24px 28px;
+  border: 1px dashed rgba(12, 57, 133, 0.4);
+  background: rgba(18, 167, 230, 0.05);
+  color: #274162;
+  font-size: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.fxguide-kpi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.fxguide-kpi-item {
+  background: #f8fbff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(12, 57, 133, 0.08);
+  text-align: center;
+}
+
+.fxguide-kpi-item strong {
+  display: block;
+  font-size: 26px;
+  color: #0f559d;
+}
+
+.fxguide-kpi-item span {
+  font-size: 13px;
+  color: #55637c;
+}
+
+.fxguide-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(12, 57, 133, 0.25);
+  color: #0a2240;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fxguide-download:hover {
+  background: #0a2240;
+  color: #fff;
+}
+
+/* ------------------------------------
+   🔹 푸터
+------------------------------------ */
+.footer {
+  background: #0a2240;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 42px 0 48px;
+  margin-top: 80px;
+}
+
+.footer-links {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-info {
+  max-width: 1100px;
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.footer-logos img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  margin-right: 12px;
+}
+
+.footer-right p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-bottom-nav {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-bottom-nav .bottom-item {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: background 0.2s ease;
+}
+
+.footer-bottom-nav .bottom-item:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* ------------------------------------
+   🔹 반응형
+------------------------------------ */
+@media (max-width: 1024px) {
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 16px 32px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .fxguide-container {
+    grid-template-columns: 1fr;
+  }
+
+  .fxguide-sidebar {
+    position: static;
+    order: 2;
+  }
+
+  .fxguide-content {
+    order: 1;
+    padding: 36px 28px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar,
+  .main-nav {
+    padding: 12px 20px;
+  }
+
+  .fxguide-content {
+    padding: 28px 22px;
+  }
+
+  .footer-bottom-nav {
+    flex-wrap: wrap;
+  }
+}
