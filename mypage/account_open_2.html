@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO은행 메인화면</title>
-  <link rel="stylesheet" href="./static/css/index.css">
+  <title>계좌개설2</title>
+  <link rel="stylesheet" href="/static/css/mypage.css"> <!-- 각 카테고리별 css 입력-->
   
 
     <link
@@ -45,7 +45,7 @@
       <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
       <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
       <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
-      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
       <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
       <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
     </ul>
@@ -122,24 +122,29 @@
 
     <div id="menu5" class="dropdown">
       <div class="menu-column">
-        <h4><a href="#">해외투자</a></h4>
+        <h4><a href="#">유학</a></h4>
         <ul>
-          <li><a href="#">해외 직접 투자</a></li>
-          <li><a href="#">해외 부동산 취득</a></li>
-          <li><a href="#">해외증권투자(간접투자)</a></li>
-          <li><a href="#">국내기업의 해외지사</a></li>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
         </ul>
       </div>
       <div class="menu-column">
-        <h4><a href="#">국내투자</a></h4>
+        <h4><a href="#">이주</a></h4>
         <ul>
-          <li><a href="#">외국인직접투자</a></li>
-          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
-          <li><a href="#">비거주자의 국내부동산 투자</a></li>
-          <li><a href="#">외국기업의 국내지사</li>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
         </ul>
       </div>
     </div>
+
 
     <div id="menu6" class="dropdown">
   <div class="menu-column">
@@ -168,97 +173,100 @@
 
 
 
-  <!-- 메인 슬라이드 배너 -->
-<section class="main-banner">
-  <div class="slider">
-    <div class="slides">
-      <div class="slide"><img src="static/images/banner.png" alt="배너1"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너2"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너3"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너4"></div>
+<main class="open2-account-container">
+  <div class="open2-account-box">
+    <h2>입출금 통장 개설</h2>
+    <p class="desc">고객 정보를 확인하고 이체한도를 설정해주세요.</p>
+
+    <!-- ✅ 1. 고객 기본정보 -->
+    <section class="open2-user-info-section">
+      <div class="open2-form-group">
+        <label class="open2-form-label">아이디</label>
+        <input type="text" class="open2-form-input readonly" value="BANK1311051" readonly>
+      </div>
+
+      <div class="open2-form-row">
+        <div class="open2-form-group half">
+          <label class="open2-form-label">생년월일</label>
+          <input type="text" class="open2-form-input readonly" value="2001-11-07" readonly>
+        </div>
+        <div class="open2-form-group half">
+          <label class="open2-form-label">성별</label>
+          <input type="text" class="open2-form-input readonly" value="여자" readonly>
+        </div>
+      </div>
+
+      <div class="open2-form-group">
+        <label class="open2-form-label">휴대폰 번호</label>
+        <input type="text" class="open2-form-input readonly" value="010-1234-5678" readonly>
+      </div>
+    </section>
+
+    <!--  4. 휴대폰 인증 -->
+    <section class="open2-verify-section">
+      <div class="open2-form-group">
+        <label class="open2-form-label">휴대폰 인증</label>
+        <div class="open2-verify-box">
+          <input type="text" class="open2-form-input short" placeholder="인증번호 입력">
+          <button class="open2-btn-verify">인증요청</button>
+        </div>
+      </div>
+    </section>
+
+    <!--  2. 이체 한도 설정 -->
+    <section class="open2-limit-section">
+      <div class="open2-form-group">
+        <label class="open2-form-label">1일 이체한도</label>
+        <div class="open2-limit-box">
+          <input type="text" class="open2-limit-input" value="10,000,000">
+          <button class="open2-btn-limit">최대</button>
+        </div>
+        <p class="open2-guide-text">최소 1만원 ~ 최대 5억원 이내 수정 가능</p>
+      </div>
+
+      <div class="open2-form-group">
+        <label class="open2-form-label">1회 이체한도</label>
+        <div class="open2-limit-box">
+          <input type="text" class="open2-limit-input" value="1,000,000">
+          <button class="open2-btn-limit">최대</button>
+        </div>
+        <p class="open2-guide-text">최소 1만원 ~ 최대 1억원 이내</p>
+      </div>
+
+      <div class="open2-info-box">
+        <p>
+          ※ 이체한도를 설정하더라도, 금융사고 방지를 위해 1일 이체한도가 1,000만원으로 제한되는
+          금융거래한도계좌로 개설됩니다.
+        </p>
+      </div>
+    </section>
+
+    <!--  3. 계좌 비밀번호 -->
+    <section class="open2-password-section">
+      <div class="open2-form-group">
+        <label class="open2-form-label">계좌 비밀번호</label>
+        <input type="password" class="open2-form-input" maxlength="4" placeholder="숫자 4자리 입력">
+        <p class="open2-guide-text">입력하신 비밀번호는 이체 및 출금 시 사용됩니다.</p>
+      </div>
+
+      <div class="open2-form-group">
+        <label class="open2-form-label">계좌 비밀번호 확인</label>
+        <input type="password" class="open2-form-input" maxlength="4" placeholder="비밀번호 재입력">
+      </div>
+    </section>
+
+    <!--  5. 다음 버튼 -->
+    <div class="open2-form-actions">
+      <button class="open2-btn-next">완료</button>
     </div>
   </div>
-
-  <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
-  <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
-
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-  <!-- 외환 종류 선택 -->
- <section class="foreign-section">
-  <div class="foreign-container">
-    <div class="foreign-item">
-      <h4><a href="#">입출금계좌 개설</a></h4>
-      <p>언제 어디서나 간편하게</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">환전</a></h4>
-      <p>다양한 통화, 실시간 환율</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">외화송금</a></h4>
-      <p>빠르고 안전한 해외송금</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">환율계산기</a></h4>
-      <p>실시간 환율 계산</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">고객센터</a></h4>
-      <p>상담 및 안내 서비스</p>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 최신 게시판 섹션 -->
-<section class="board-section">
-  <div class="board-container">
-
-    <!-- 왼쪽 게시판 -->
-    <div class="board-box">
-      <h3>공지사항</h3>
-      <ul>
-        <li><a href="#">[공지] 외화예금 서비스 점검 안내</a><span>2025.11.01</span></li>
-        <li><a href="#">해외송금 수수료 변경 안내</a><span>2025.10.27</span></li>
-        <li><a href="#">모바일뱅킹 시스템 점검 안내</a><span>2025.10.24</span></li>
-        <li><a href="#">환율우대 이벤트 종료 안내</a><span>2025.10.18</span></li>
-        <li><a href="#">영업점 이전 안내 (부산중앙지점)</a><span>2025.10.10</span></li>
-      </ul>
-      <div class="more"><a href="#">+ 더보기</a></div>
-    </div>
-
-    <!-- 오른쪽 게시판 -->
-    <div class="board-box">
-      <h3>뉴스·이벤트</h3>
-      <ul>
-        <li><a href="#">[이벤트] 외화송금 수수료 50% 할인</a><span>2025.11.01</span></li>
-        <li><a href="#">하나은행, ESG 경영 우수기관 선정</a><span>2025.10.28</span></li>
-        <li><a href="#">글로벌 파이낸스 어워즈 수상</a><span>2025.10.22</span></li>
-        <li><a href="#">하나머니 환전 캐시백 프로모션</a><span>2025.10.17</span></li>
-        <li><a href="#">외화예금 신규고객 이벤트 진행</a><span>2025.10.09</span></li>
-      </ul>
-      <div class="more"><a href="#">+ 더보기</a></div>
-    </div>
-
-  </div>
-</section>
+</main>
 
 
 
 
 
-
-
-
- <!-- 푸터 -->
+<!-- 푸터 -->
 <footer class="footer">
   <div class="footer-links">
     <a href="#">사고신고</a> |
@@ -295,7 +303,8 @@
   </div>
 </footer>
 
-<script src ="./static/js/index.js"></script>
+<script src ="/static/js/index.js"></script>
+<script src ="/static/js/mypage.js"></script>
 
 </body>
 </html>

@@ -673,3 +673,1380 @@ footer {
     width: 100%;
   }
 }
+
+
+
+
+/* =============================
+   계좌개설 약관
+============================= */
+:root {
+  --main-color: #22304E;   /* 딥 네이비 */
+  --highlight: #4FBDBA;   /* 버튼/포인트 민트색 */
+  --border-light: #ddd;
+  --text-dark: #222;
+  --text-gray: #666;
+}
+
+/* ----------------------------
+   전체 레이아웃
+---------------------------- */
+body {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 중앙 컨테이너 */
+.terms-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 제목 */
+.terms-container h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+}
+
+.terms-desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ----------------------------
+   그룹 제목
+---------------------------- */
+.group-title {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 40px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* ----------------------------
+   약관 박스
+---------------------------- */
+.terms-box {
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background: #fafafa;
+}
+
+/* 약관 제목 */
+.terms-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+/* 약관 본문 */
+.terms-content {
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  border-radius: 6px;
+}
+
+/* 스크롤바 디자인 */
+.terms-content::-webkit-scrollbar {
+  width: 8px;
+}
+.terms-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+.terms-content::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* ----------------------------
+   체크박스
+---------------------------- */
+.terms-check {
+  margin-top: 12px;
+}
+
+.custom-check {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-dark);
+  user-select: none;
+}
+
+/* 실제 input 숨김 */
+.custom-check input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* 기본 박스 */
+.custom-check .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  display: inline-block;
+  margin-right: 8px;
+  transition: all 0.25s ease;
+}
+
+/* 체크 시 효과 */
+.custom-check input:checked + .checkmark {
+  background: var(--highlight);
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.6);
+  position: relative;
+}
+
+/* 체크표시 */
+.custom-check input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ----------------------------
+   전체 동의
+---------------------------- */
+.terms-all {
+  margin-top: 40px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--main-color);
+  border-top: 1px dashed #ccc;
+  padding-top: 20px;
+}
+
+.terms-all .custom-check {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ----------------------------
+   다음 버튼
+---------------------------- */
+.terms-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-next:hover {
+  background: var(--highlight);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* ----------------------------
+   반응형 (태블릿/모바일)
+---------------------------- */
+@media (max-width: 1024px) {
+  .terms-container {
+    width: 85%;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-container {
+    width: 95%;
+    padding: 25px 20px;
+  }
+
+  .terms-title {
+    font-size: 14px;
+  }
+
+  .terms-content {
+    max-height: 160px;
+  }
+
+  .btn-next {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   입출금통장 개설 (open2-account) - 독립 버전
+   ========================================================= */
+
+.open2-account-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.open2-account-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 및 설명 */
+.open2-account-box h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.open2-account-box .desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --------------------------------------------
+   입력 폼 기본
+-------------------------------------------- */
+.open2-form-group {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.open2-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.open2-form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.open2-form-input:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.3);
+}
+
+/* 읽기 전용 input */
+.open2-form-input.readonly {
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+.open2-form-input.readonly:focus {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* 생년월일/성별 한 줄 */
+.open2-form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.open2-form-group.half {
+  flex: 1;
+}
+
+/* --------------------------------------------
+   이체 한도
+-------------------------------------------- */
+.open2-limit-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+
+/* 입력칸 폭 줄이기 */
+.open2-limit-input {
+  flex: 1;
+  max-width: 320px; /* ⬅️ 입력칸 최대폭 축소 */
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 8px 10px;
+  text-align: right;
+  transition: border-color 0.25s ease;
+}
+.open2-limit-input:focus {
+  border-color: var(--highlight);
+}
+
+.open2-btn-limit {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-limit:hover {
+  background: var(--highlight);
+}
+
+/* 안내 박스 */
+.open2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------
+   인증 / 비밀번호
+-------------------------------------------- */
+.open2-verify-box {
+  display: flex;
+  gap: 10px;
+}
+
+.open2-form-input.short {
+  flex: 1;
+}
+
+.open2-btn-verify {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-verify:hover {
+  background: var(--highlight);
+}
+
+/* --------------------------------------------
+   버튼
+-------------------------------------------- */
+.open2-form-actions {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.open2-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+.open2-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* --------------------------------------------
+   반응형
+-------------------------------------------- */
+@media (max-width: 1024px) {
+  .open2-account-container {
+    width: 85%;
+  }
+  .open2-account-box {
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .open2-account-container {
+    width: 95%;
+    margin: 60px auto;
+  }
+  .open2-account-box {
+    padding: 20px;
+  }
+  .open2-limit-input {
+    font-size: 14px;
+  }
+  .open2-btn-next {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+/* =========================================================
+   입출금통장 개설 (open2-account) - 수정 완료 버전
+   ========================================================= */
+
+.open2-account-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.open2-account-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 35px 45px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 및 설명 */
+.open2-account-box h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.open2-account-box .desc {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --------------------------------------------
+   입력 폼 기본
+-------------------------------------------- */
+.open2-form-group {
+  margin-bottom: 22px;
+  text-align: left;
+  width: 420px; /* 전체 폼 폭 제한 */
+  margin-left: auto;
+  margin-right: auto; /* 중앙 정렬 */
+}
+
+.open2-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-align: left; /* 라벨 왼쪽정렬 */
+}
+
+.open2-form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.open2-form-input:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79, 189, 186, 0.3);
+}
+
+/* 읽기 전용 input */
+.open2-form-input.readonly {
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+.open2-form-input.readonly:focus {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+/* 생년월일/성별 한 줄 */
+.open2-form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 420px;
+  margin: 0 auto;
+}
+.open2-form-group.half {
+  flex: 1;
+}
+
+/* --------------------------------------------
+   이체 한도
+-------------------------------------------- */
+.open2-limit-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.open2-limit-section .open2-form-group {
+  width: 420px;
+}
+
+.open2-limit-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.open2-limit-input {
+  flex: 1;
+  max-width: 320px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding: 8px 10px;
+  text-align: right;
+  transition: border-color 0.25s ease;
+}
+
+.open2-limit-input:focus {
+  border-color: var(--highlight);
+}
+
+.open2-btn-limit {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-limit:hover {
+  background: var(--highlight);
+}
+
+/* 안내문구 왼쪽 정렬 */
+.open2-guide-text {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-top: 5px;
+  text-align: left;
+}
+
+/* 안내 박스 */
+.open2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------
+   인증 / 비밀번호
+-------------------------------------------- */
+.open2-verify-box {
+  display: flex;
+  gap: 10px;
+}
+
+.open2-form-input.short {
+  flex: 1;
+}
+
+.open2-btn-verify {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.open2-btn-verify:hover {
+  background: var(--highlight);
+}
+
+/* --------------------------------------------
+   버튼
+-------------------------------------------- */
+.open2-form-actions {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.open2-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+  transition: all 0.25s ease;
+}
+.open2-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+/* --------------------------------------------
+   반응형
+-------------------------------------------- */
+@media (max-width: 1024px) {
+  .open2-account-container {
+    width: 85%;
+  }
+  .open2-account-box {
+    padding: 25px 30px;
+  }
+  .open2-form-group,
+  .open2-limit-section .open2-form-group,
+  .open2-info-box {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .open2-account-container {
+    width: 95%;
+    margin: 60px auto;
+  }
+  .open2-account-box {
+    padding: 20px;
+  }
+  .open2-limit-input {
+    font-size: 14px;
+  }
+  .open2-btn-next {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+
+
+/* =========================================================
+   입출금통장 개설 완료 (open3)
+   ========================================================= */
+
+.open3-complete {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 100px 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.open3-complete-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 60px 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 600px;
+}
+
+.open3-char-img img {
+  width: 160px;
+  margin-bottom: 25px;
+}
+
+.open3-complete-text h2 {
+  font-size: 22px;
+  color: var(--main-color);
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.open3-complete-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.open3-complete-btn {
+  background: var(--main-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(34, 48, 78, 0.25);
+}
+
+.open3-complete-btn:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(79, 189, 186, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .open3-complete-box {
+    padding: 40px 30px;
+    width: 90%;
+  }
+
+  .open3-char-img img {
+    width: 120px;
+  }
+
+  .open3-complete-text h2 {
+    font-size: 20px;
+  }
+
+  .open3-complete-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+
+
+/* ============================================
+   계좌이체 1단계 (transfer1)
+   ============================================ */
+.transfer1-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer1-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 제목 */
+.transfer1-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 안내문 */
+.transfer1-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-gray);
+  padding: 15px 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* 구역 제목 */
+.transfer1-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 30px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* 폼 그룹 */
+.transfer1-form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.transfer1-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.transfer1-input,
+.transfer1-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.transfer1-input:focus,
+.transfer1-select:focus {
+  border-color: var(--highlight);
+  box-shadow: 0 0 4px rgba(79,189,186,0.3);
+}
+
+/* 이체금액 버튼 */
+.transfer1-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.transfer1-input.short {
+  max-width: 250px;
+  flex: 1;
+}
+
+.transfer1-btn-group button {
+  background: #f3f4f6;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.transfer1-btn-group button:hover {
+  background: var(--highlight);
+  color: #fff;
+}
+
+/* 선택입력 */
+.transfer1-flex-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.transfer1-form-group.half {
+  flex: 1;
+}
+
+/* 버튼영역 */
+.transfer1-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer1-btn-next {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(34,48,78,0.25);
+  transition: all 0.25s ease;
+}
+
+.transfer1-btn-next:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer1-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 30px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer1-btn-sub:hover {
+  background: #e5e5e5;
+}
+
+
+.transfer1-input.readonly {
+  background: #f9f9f9;
+  color: #555;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+
+/* --------------------------------------------
+   단계 표시 바 (Progress Steps)
+-------------------------------------------- */
+.transfer1-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.transfer1-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer1-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+  transition: all 0.3s ease;
+}
+
+.transfer1-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer1-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer1-step .text {
+  font-size: 14px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+/* ============================================
+   계좌이체 2단계 (transfer2)
+   ============================================ */
+.transfer2-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer2-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 단계 표시 */
+.transfer2-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.transfer2-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer2-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+}
+
+.transfer2-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer2-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+/* 제목 */
+.transfer2-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 안내문 */
+.transfer2-info-box {
+  background: #fafafa;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-gray);
+  padding: 15px 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.transfer2-info-box.small {
+  background: #fefefe;
+  font-size: 13px;
+  padding: 12px 18px;
+}
+
+/* 구역 제목 */
+.transfer2-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 25px 0 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+/* 테이블 */
+.transfer2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+.transfer2-table th {
+  background: #f5f8fa;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.transfer2-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.transfer2-table .sub {
+  color: #777;
+  font-size: 12px;
+}
+
+/* 버튼 */
+.transfer2-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer2-btn-main {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(34,48,78,0.25);
+  transition: all 0.25s ease;
+}
+
+.transfer2-btn-main:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer2-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 30px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer2-btn-sub:hover {
+  background: #e5e5e5;
+}
+
+/* ============================================
+   계좌이체 3단계 (transfer3)
+   ============================================ */
+.transfer3-container {
+  width: 70%;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.transfer3-box {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* 단계 표시 */
+.transfer3-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.transfer3-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.transfer3-step .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.8px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background: #fff;
+  color: #888;
+}
+
+.transfer3-step.active .num {
+  border-color: var(--main-color);
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer3-step.active .text {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+/* 완료 박스 */
+.transfer3-complete-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1.5px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 25px 30px;
+  margin-bottom: 35px;
+}
+
+.transfer3-icon i {
+  font-size: 36px;
+  color: var(--main-color);
+}
+
+.transfer3-complete-text h2 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.transfer3-complete-text p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* 이체결과 */
+.transfer3-section {
+  margin-top: 25px;
+}
+
+.transfer3-subtitle {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  border-left: 4px solid var(--main-color);
+  padding-left: 10px;
+}
+
+.transfer3-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
+}
+
+.transfer3-table th {
+  background: #f5f8fa;
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+.transfer3-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: var(--text-dark);
+}
+
+.transfer3-table .sub {
+  color: #777;
+  font-size: 12px;
+}
+
+.transfer3-success {
+  color: var(--main-color);
+  font-weight: 700;
+}
+
+.transfer3-guide {
+  font-size: 13px;
+  color: #777;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* 버튼 */
+.transfer3-actions {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.transfer3-btn-main {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(34,48,78,0.25);
+}
+
+.transfer3-btn-main:hover {
+  background: var(--highlight);
+  transform: translateY(-2px);
+}
+
+.transfer3-btn-sub {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px 28px;
+  margin-left: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.transfer3-btn-sub:hover {
+  background: #e6e6e6;
+}
+
+

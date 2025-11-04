@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO은행 메인화면</title>
-  <link rel="stylesheet" href="./static/css/index.css">
+  <title>계좌개설 완료</title>
+  <link rel="stylesheet" href="/static/css/mypage.css">
   
 
     <link
@@ -45,7 +45,7 @@
       <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
       <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
       <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
-      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
       <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
       <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
     </ul>
@@ -122,39 +122,36 @@
 
     <div id="menu5" class="dropdown">
       <div class="menu-column">
-        <h4><a href="#">해외투자</a></h4>
+        <h4><a href="#">유학</a></h4>
         <ul>
-          <li><a href="#">해외 직접 투자</a></li>
-          <li><a href="#">해외 부동산 취득</a></li>
-          <li><a href="#">해외증권투자(간접투자)</a></li>
-          <li><a href="#">국내기업의 해외지사</a></li>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
         </ul>
       </div>
       <div class="menu-column">
-        <h4><a href="#">국내투자</a></h4>
+        <h4><a href="#">이주</a></h4>
         <ul>
-          <li><a href="#">외국인직접투자</a></li>
-          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
-          <li><a href="#">비거주자의 국내부동산 투자</a></li>
-          <li><a href="#">외국기업의 국내지사</li>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
         </ul>
       </div>
     </div>
 
     <div id="menu6" class="dropdown">
-  <div class="menu-column">
-    <h4><a href="#">고객상담</a></h4>
-    <ul>
-      <li><a href="#">질문과 답변(Q&A)</a></li>
-      <li><a href="#">자주 묻는 질문</a></li>
-      <li><a href="#">챗봇</a></li>
-    </ul>
-  </div>
-  <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
-  <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
-  <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
-  <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
-</div>
+      <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+      <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+      <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+      <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+    </div>
 
     <div id="menu7" class="dropdown">
       <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
@@ -166,90 +163,76 @@
   </div>
 </header>
 
+<main class="transfer3-container">
+  <div class="transfer3-box">
 
-
-  <!-- 메인 슬라이드 배너 -->
-<section class="main-banner">
-  <div class="slider">
-    <div class="slides">
-      <div class="slide"><img src="static/images/banner.png" alt="배너1"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너2"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너3"></div>
-      <div class="slide"><img src="static/images/banner.png" alt="배너4"></div>
-    </div>
-  </div>
-
-  <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
-  <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
-
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-  <!-- 외환 종류 선택 -->
- <section class="foreign-section">
-  <div class="foreign-container">
-    <div class="foreign-item">
-      <h4><a href="#">입출금계좌 개설</a></h4>
-      <p>언제 어디서나 간편하게</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">환전</a></h4>
-      <p>다양한 통화, 실시간 환율</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">외화송금</a></h4>
-      <p>빠르고 안전한 해외송금</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">환율계산기</a></h4>
-      <p>실시간 환율 계산</p>
-    </div>
-    <div class="foreign-item">
-      <h4><a href="#">고객센터</a></h4>
-      <p>상담 및 안내 서비스</p>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 최신 게시판 섹션 -->
-<section class="board-section">
-  <div class="board-container">
-
-    <!-- 왼쪽 게시판 -->
-    <div class="board-box">
-      <h3>공지사항</h3>
-      <ul>
-        <li><a href="#">[공지] 외화예금 서비스 점검 안내</a><span>2025.11.01</span></li>
-        <li><a href="#">해외송금 수수료 변경 안내</a><span>2025.10.27</span></li>
-        <li><a href="#">모바일뱅킹 시스템 점검 안내</a><span>2025.10.24</span></li>
-        <li><a href="#">환율우대 이벤트 종료 안내</a><span>2025.10.18</span></li>
-        <li><a href="#">영업점 이전 안내 (부산중앙지점)</a><span>2025.10.10</span></li>
-      </ul>
-      <div class="more"><a href="#">+ 더보기</a></div>
+    <!-- 단계 표시 -->
+    <div class="transfer3-steps">
+      <div class="transfer3-step">
+        <span class="num">1</span><span class="text">정보입력</span>
+      </div>
+      <div class="transfer3-step">
+        <span class="num">2</span><span class="text">입력확인</span>
+      </div>
+      <div class="transfer3-step active">
+        <span class="num">3</span><span class="text">이체완료</span>
+      </div>
     </div>
 
-    <!-- 오른쪽 게시판 -->
-    <div class="board-box">
-      <h3>뉴스·이벤트</h3>
-      <ul>
-        <li><a href="#">[이벤트] 외화송금 수수료 50% 할인</a><span>2025.11.01</span></li>
-        <li><a href="#">하나은행, ESG 경영 우수기관 선정</a><span>2025.10.28</span></li>
-        <li><a href="#">글로벌 파이낸스 어워즈 수상</a><span>2025.10.22</span></li>
-        <li><a href="#">하나머니 환전 캐시백 프로모션</a><span>2025.10.17</span></li>
-        <li><a href="#">외화예금 신규고객 이벤트 진행</a><span>2025.10.09</span></li>
-      </ul>
-      <div class="more"><a href="#">+ 더보기</a></div>
+    <!--  완료 안내 -->
+    <section class="transfer3-complete-box">
+      <div class="transfer3-icon">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <div class="transfer3-complete-text">
+        <h2><strong>계좌이체</strong>가 정상적으로 완료되었습니다.</h2>
+        <p>계좌이체 처리결과를 확인해 주세요.</p>
+      </div>
+    </section>
+
+    <!--  이체결과 -->
+    <section class="transfer3-section">
+      <h3 class="transfer3-subtitle">이체결과</h3>
+      <table class="transfer3-table">
+        <thead>
+          <tr>
+            <th>출금계좌(내통장표시)</th>
+            <th>입금계좌(받는분통장표시)</th>
+            <th>받는분</th>
+            <th>이체금액</th>
+            <th>수수료</th>
+            <th>거래후잔액</th>
+            <th>CMS코드</th>
+            <th>비고</th>
+            <th>처리결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>333-3333-3333-3333<br><span class="sub">OOO</span></td>
+            <td>33-3333-3333-3333<br><span class="sub">OOO</span></td>
+            <td>OOO</td>
+            <td>10,000</td>
+            <td>0<br><span class="sub">우대수수료</span></td>
+            <td>34,197</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span class="transfer3-success">정상</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="transfer3-guide">※ SMS 통지 설정 시 결과를 문자로 받을 수 있습니다.</p>
+    </section>
+
+    <!-- 버튼 영역 -->
+    <div class="transfer3-actions">
+      <button class="transfer3-btn-main">확인</button>
+
     </div>
 
   </div>
-</section>
+</main>
 
 
 
@@ -258,7 +241,7 @@
 
 
 
- <!-- 푸터 -->
+<!-- 푸터 -->
 <footer class="footer">
   <div class="footer-links">
     <a href="#">사고신고</a> |
@@ -295,7 +278,7 @@
   </div>
 </footer>
 
-<script src ="./static/js/index.js"></script>
+<script src ="/static/js/index.js"></script>
 
 </body>
 </html>
