@@ -1,0 +1,620 @@
+/* =========================================================
+   FX Guide Style Sheet
+   파일명: fxguide.css
+   설명: 외환가이드 섹션에 특화된 헤더/푸터/사이드바 및 본문 스타일
+   ========================================================= */
+
+/* 기본 초기화 및 폰트 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+/* ------------------------------------
+   🔹 상단 헤더 영역 (top-bar + main-nav)
+------------------------------------ */
+.top-bar {
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 80px;
+  font-size: 14px;
+}
+
+.top-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.top-bar a:hover {
+  color: #4A6FA5;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.right-menu a:hover {
+  color: #4A6FA5;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+}
+
+.nav-menu > li {
+  position: relative;
+}
+
+.nav-menu > li > a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  padding: 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a:focus {
+  color: #4A6FA5;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-icons a {
+  color: #333;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-icons a:hover {
+  color: #4A6FA5;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 1100px;
+  background: #fff;
+  border-top: 2px solid #4A6FA5;
+  display: none;
+  justify-content: flex-start;
+  gap: 60px;
+  padding: 30px 50px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transition: all 0.25s ease;
+  z-index: 100;
+}
+
+.dropdown.show {
+  display: flex;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.menu-column {
+  min-width: 180px;
+}
+
+.menu-column h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.menu-column h4 a {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.menu-column h4 a:hover {
+  color: #4A6FA5;
+}
+
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-column li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.menu-column li a {
+  text-decoration: none;
+  color: #777;
+  transition: color 0.2s ease;
+}
+
+.menu-column li a:hover {
+  color: #4A6FA5;
+}
+
+/* ------------------------------------
+   🔹 메인 레이아웃
+------------------------------------ */
+.fxguide-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 80px auto;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
+.fxguide-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: fit-content;
+}
+
+.fxguide-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 20px;
+}
+
+.fxguide-sidebar nav {
+  display: grid;
+  gap: 20px;
+}
+
+.fxguide-group {
+  list-style: none;
+}
+
+.fxguide-group-title {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #7b8798;
+  margin-bottom: 10px;
+}
+
+.fxguide-link-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  padding-left: 0;
+}
+
+.fxguide-link-list a {
+  text-decoration: none;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fxguide-link-list a:hover,
+.fxguide-link-list a:focus {
+  background: #f0f4ff;
+  color: #2C5DE5;
+}
+
+.fxguide-link-list a.active {
+  background: #e7edff;
+  color: #2C5DE5;
+  font-weight: 700;
+}
+
+.fxguide-content {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  display: grid;
+  gap: 28px;
+  min-height: 500px;
+}
+
+.fxguide-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fxguide-heading h1 {
+  font-size: 28px;
+  color: #22304E;
+}
+
+.fxguide-tagline {
+  font-size: 14px;
+  color: #4f5d78;
+}
+
+.fxguide-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #4A6FA5, #2C5DE5);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.fxguide-highlight {
+  border-left: 3px solid #4A6FA5;
+  background: #f3f6fb;
+  padding: 18px 24px;
+  border-radius: 10px;
+  color: #22304E;
+  font-weight: 500;
+}
+
+.fxguide-card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.fxguide-card {
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid #e2e6ec;
+  background: #f8fbff;
+  display: grid;
+  gap: 10px;
+}
+
+.fxguide-card h3 {
+  font-size: 17px;
+  color: #22304E;
+}
+
+.fxguide-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.fxguide-section h2 {
+  font-size: 20px;
+  color: #22304E;
+  margin-bottom: 12px;
+}
+
+.fxguide-section p {
+  color: #4f5d78;
+  font-size: 14px;
+}
+
+.fxguide-section ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.fxguide-section ul li {
+  padding-left: 18px;
+  position: relative;
+  color: #4f5d78;
+  font-size: 14px;
+}
+
+.fxguide-section ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2C5DE5;
+  font-size: 18px;
+}
+
+.fxguide-step-list {
+  counter-reset: step;
+  display: grid;
+  gap: 16px;
+  padding-left: 0;
+}
+
+.fxguide-step-list li {
+  list-style: none;
+  background: #f0f4ff;
+  padding: 18px 22px 18px 60px;
+  border-radius: 12px;
+  position: relative;
+  color: #384762;
+}
+
+.fxguide-step-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #2C5DE5;
+  color: #fff;
+  font-weight: 700;
+}
+
+.fxguide-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.fxguide-table thead {
+  background: #22304E;
+  color: #fff;
+}
+
+.fxguide-table th,
+.fxguide-table td {
+  padding: 14px 18px;
+  border: 1px solid #e2e6ec;
+  text-align: left;
+}
+
+.fxguide-table tbody tr:nth-child(even) {
+  background: #f5f7fb;
+}
+
+.fxguide-caption {
+  font-size: 13px;
+  color: #647290;
+  margin-top: 6px;
+}
+
+.fxguide-callout {
+  border-radius: 10px;
+  padding: 20px 24px;
+  border: 1px dashed #c1cce0;
+  background: #f5f8ff;
+  color: #22304E;
+  font-size: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.fxguide-kpi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.fxguide-kpi-item {
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e6ec;
+  text-align: center;
+}
+
+.fxguide-kpi-item strong {
+  display: block;
+  font-size: 24px;
+  color: #2C5DE5;
+}
+
+.fxguide-kpi-item span {
+  font-size: 13px;
+  color: #55637c;
+}
+
+.fxguide-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #4A6FA5;
+  color: #22304E;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.fxguide-download:hover {
+  background: #4A6FA5;
+  color: #fff;
+}
+
+/* ------------------------------------
+   🔹 푸터
+------------------------------------ */
+.footer {
+  background: #f8f8f8;
+  border-top: 1px solid #e5e5e5;
+  box-shadow: none;
+  padding: 60px 0 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 60px;
+}
+
+.footer-links {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-logos img {
+  height: 35px;
+  opacity: 0.9;
+}
+
+.footer-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.footer-right strong {
+  color: #222;
+  font-weight: 700;
+}
+
+.footer-bottom-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer-bottom-nav .bottom-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-bottom-nav .bottom-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* ------------------------------------
+   🔹 반응형
+------------------------------------ */
+@media (max-width: 1024px) {
+  .top-bar,
+  .main-nav {
+    padding: 10px 30px;
+  }
+
+  .nav-menu {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .fxguide-container {
+    flex-direction: column;
+    gap: 24px;
+    margin: 50px auto;
+  }
+
+  .fxguide-sidebar,
+  .fxguide-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-bar,
+  .main-nav {
+    padding: 10px 20px;
+  }
+
+  .fxguide-content {
+    padding: 24px 20px;
+  }
+}
