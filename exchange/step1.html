@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO은행 메인화면</title>
-  <link rel="stylesheet" href="#"> <!-- 각 카테고리별 css 입력-->
+  <title>환전하기1</title>
+  <link rel="stylesheet" href="/static/css/exchange.css"> <!-- 각 카테고리별 css 입력-->
   
 
     <link
@@ -45,7 +45,7 @@
       <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
       <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
       <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
-      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
       <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
       <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
     </ul>
@@ -108,7 +108,6 @@
     </div>
 
     <div id="menu4" class="dropdown">
-      <div class="menu-column"><h4><a href="#">환율 조회</a></h4></div>
       <div class="menu-column">
         <h4><a href="#">환율 제공 서비스</a></h4>
         <ul>
@@ -123,39 +122,36 @@
 
     <div id="menu5" class="dropdown">
       <div class="menu-column">
-        <h4><a href="#">해외투자</a></h4>
+        <h4><a href="#">유학</a></h4>
         <ul>
-          <li><a href="#">해외 직접 투자</a></li>
-          <li><a href="#">해외 부동산 취득</a></li>
-          <li><a href="#">해외증권투자(간접투자)</a></li>
-          <li><a href="#">국내기업의 해외지사</a></li>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
         </ul>
       </div>
       <div class="menu-column">
-        <h4><a href="#">국내투자</a></h4>
+        <h4><a href="#">이주</a></h4>
         <ul>
-          <li><a href="#">외국인직접투자</a></li>
-          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
-          <li><a href="#">비거주자의 국내부동산 투자</a></li>
-          <li><a href="#">외국기업의 국내지사</li>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
         </ul>
       </div>
     </div>
 
     <div id="menu6" class="dropdown">
-  <div class="menu-column">
-    <h4><a href="#">고객상담</a></h4>
-    <ul>
-      <li><a href="#">질문과 답변(Q&A)</a></li>
-      <li><a href="#">자주 묻는 질문</a></li>
-      <li><a href="#">챗봇</a></li>
-    </ul>
-  </div>
-  <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
-  <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
-  <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
-  <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
-</div>
+      <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+      <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+      <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+      <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+    </div>
 
     <div id="menu7" class="dropdown">
       <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
@@ -167,36 +163,77 @@
   </div>
 </header>
 
+<main class="step1-container">
+  <!-- 단계 표시 -->
+  <div class="step1-steps">
+    <div class="step1-step active">
+      <span class="num">1</span>
+      <span class="text">약관동의</span>
+    </div>
+    <div class="step1-step">
+      <span class="num">2</span>
+      <span class="text">정보입력</span>
+    </div>
+    <div class="step1-step">
+      <span class="num">3</span>
+      <span class="text">환전완료</span>
+    </div>
+  </div>
 
+  <div class="step1-box">
 
+    <div class="step1-info-box">
+      <p>
+        • 환전 서비스를 이용하시기 전, 아래 약관을 반드시 읽고 동의해주세요.<br>
+        • 모든 약관에 동의하셔야 다음 단계로 진행할 수 있습니다.
+      </p>
+    </div>
 
+    <!-- 약관 동의 영역 -->
+    <section class="step1-section">
+      <!-- 약관 1 -->
+      <div class="step1-form-group">
+        <label class="step1-label">외환거래기본약관 (필수)</label>
+        <div class="step1-input readonly">
+          제1조(목적) 본 약관은 고객과 OO은행 간의 외환거래에 관한 기본사항을 규정함을 목적으로 합니다.<br><br>
+          제2조(적용범위) 이 약관은 외환 관련 예금, 송금, 환전 등 거래에 적용됩니다.<br><br>
+          제3조(고객확인) 은행은 「외국환거래법」에 따라 고객확인 절차를 수행합니다.<br><br>
+          제4조(환율적용) 적용환율은 거래시점의 실시간 기준환율을 적용합니다.<br><br>
+          제5조(분쟁해결) 분쟁 발생 시 금융감독원 분쟁조정 절차에 따릅니다.<br><br>
+          (이하 생략)
+        </div>
+        <div class="step1-check">
+          <input type="checkbox" class="term-check"> 위 약관에 동의합니다.
+        </div>
+      </div>
 
+      <!-- 약관 2 -->
+      <div class="step1-form-group">
+        <label class="step1-label">예금자보호법 관련 설명 (필수)</label>
+        <div class="step1-input readonly">
+          본 환전 서비스는 예금자보호법에 따라 보호되지 않는 금융거래입니다.<br><br>
+          외환거래는 환율 변동에 따라 원화금액 손실이 발생할 수 있으며,<br>
+          이는 예금자보호법의 보호대상에 포함되지 않습니다.<br><br>
+          고객은 관련 법규 및 거래 위험을 충분히 이해한 후 서비스를 이용해야 합니다.<br><br>
+          (이하 생략)
+        </div>
+        <div class="step1-check">
+          <input type="checkbox" class="term-check"> 위 약관에 동의합니다.
+        </div>
+      </div>
 
+      <!-- 전체 동의 -->
+      <div class="step1-agree-all">
+        <label><input type="checkbox" id="agreeAll"> 모든 약관에 동의합니다.</label>
+      </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- 버튼 -->
+    <div class="step1-actions">
+      <button class="step1-btn-next">다음</button>
+    </div>
+  </div>
+</main>
 
 
 <!-- 푸터 -->
@@ -236,6 +273,8 @@
   </div>
 </footer>
 
+
+<script src ="/static/js/exchange.js"></script>
 <script src ="/static/js/index.js"></script>
 
 </body>

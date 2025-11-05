@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO은행 메인화면</title>
-  <link rel="stylesheet" href="#"> <!-- 각 카테고리별 css 입력-->
+  <title>환전하기3</title>
+  <link rel="stylesheet" href="/static/css/exchange.css"> <!-- 각 카테고리별 css 입력-->
   
 
     <link
@@ -45,7 +45,7 @@
       <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
       <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
       <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
-      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
       <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
       <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
     </ul>
@@ -108,7 +108,6 @@
     </div>
 
     <div id="menu4" class="dropdown">
-      <div class="menu-column"><h4><a href="#">환율 조회</a></h4></div>
       <div class="menu-column">
         <h4><a href="#">환율 제공 서비스</a></h4>
         <ul>
@@ -123,39 +122,36 @@
 
     <div id="menu5" class="dropdown">
       <div class="menu-column">
-        <h4><a href="#">해외투자</a></h4>
+        <h4><a href="#">유학</a></h4>
         <ul>
-          <li><a href="#">해외 직접 투자</a></li>
-          <li><a href="#">해외 부동산 취득</a></li>
-          <li><a href="#">해외증권투자(간접투자)</a></li>
-          <li><a href="#">국내기업의 해외지사</a></li>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
         </ul>
       </div>
       <div class="menu-column">
-        <h4><a href="#">국내투자</a></h4>
+        <h4><a href="#">이주</a></h4>
         <ul>
-          <li><a href="#">외국인직접투자</a></li>
-          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
-          <li><a href="#">비거주자의 국내부동산 투자</a></li>
-          <li><a href="#">외국기업의 국내지사</li>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
         </ul>
       </div>
     </div>
 
     <div id="menu6" class="dropdown">
-  <div class="menu-column">
-    <h4><a href="#">고객상담</a></h4>
-    <ul>
-      <li><a href="#">질문과 답변(Q&A)</a></li>
-      <li><a href="#">자주 묻는 질문</a></li>
-      <li><a href="#">챗봇</a></li>
-    </ul>
-  </div>
-  <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
-  <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
-  <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
-  <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
-</div>
+      <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+      <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+      <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+      <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+    </div>
 
     <div id="menu7" class="dropdown">
       <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
@@ -167,27 +163,47 @@
   </div>
 </header>
 
+<!-- ✅ step3 전체 컨테이너 -->
+<div class="step2-container">
+  <!-- 단계 표시 -->
+  <div class="step2-steps">
+    <div class="step2-step">
+      <span class="num">1</span>
+      <span class="text">약관동의</span>
+    </div>
+    <div class="step2-step">
+      <span class="num">2</span>
+      <span class="text">정보입력</span>
+    </div>
+    <div class="step2-step active">
+      <span class="num">3</span>
+      <span class="text">환전완료</span>
+    </div>
+  </div>
 
+  <!-- 환전 신청 완료 -->
+  <div class="step3-complete">
+    <div class="step3-complete-box">
 
+      <!-- 캐릭터 이미지 -->
+      <div class="step3-char-img">
+        <img src="/static/images/character2.png" alt="플로은행 캐릭터">
+      </div>
 
+      <!-- 완료 문구 -->
+      <div class="step3-complete-text">
+        <h2><span id="userName">홍길동</span>님, 환전 신청이 완료되었습니다!</h2>
+        <p>
+          고객님께서 신청하신 외화는 선택하신 <strong>수령희망지점</strong>에서 수령하실 수 있습니다.<br>
+          외화 수령 시 반드시 <strong>신분증을 지참</strong>하시고, <strong>신청인 본인만 수령 가능</strong>합니다.<br><br>
+          플로은행을 이용해 주셔서 감사합니다.
+        </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <a href="/" class="step3-complete-btn">메인으로 가기</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -236,6 +252,8 @@
   </div>
 </footer>
 
+
+<script src ="/static/js/exchange.js"></script>
 <script src ="/static/js/index.js"></script>
 
 </body>

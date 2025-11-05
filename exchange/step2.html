@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO은행 메인화면</title>
-  <link rel="stylesheet" href="#"> <!-- 각 카테고리별 css 입력-->
+  <title>환전하기2</title>
+  <link rel="stylesheet" href="/static/css/exchange.css"> <!-- 각 카테고리별 css 입력-->
   
 
     <link
@@ -45,7 +45,7 @@
       <li class="menu-item" data-target="menu2"><a href="#">외화송금</a></li>
       <li class="menu-item" data-target="menu3"><a href="#">환전</a></li>
       <li class="menu-item" data-target="menu4"><a href="#">환율</a></li>
-      <li class="menu-item" data-target="menu5"><a href="#">외환가이드</a></li>
+      <li class="menu-item" data-target="menu5"><a href="#">유학/이주/여행</a></li>
       <li class="menu-item" data-target="menu6"><a href="#">고객센터</a></li>
       <li class="menu-item" data-target="menu7"><a href="#">은행소개</a></li>
     </ul>
@@ -108,7 +108,6 @@
     </div>
 
     <div id="menu4" class="dropdown">
-      <div class="menu-column"><h4><a href="#">환율 조회</a></h4></div>
       <div class="menu-column">
         <h4><a href="#">환율 제공 서비스</a></h4>
         <ul>
@@ -123,39 +122,36 @@
 
     <div id="menu5" class="dropdown">
       <div class="menu-column">
-        <h4><a href="#">해외투자</a></h4>
+        <h4><a href="#">유학</a></h4>
         <ul>
-          <li><a href="#">해외 직접 투자</a></li>
-          <li><a href="#">해외 부동산 취득</a></li>
-          <li><a href="#">해외증권투자(간접투자)</a></li>
-          <li><a href="#">국내기업의 해외지사</a></li>
+          <li><a href="#">해외유학서비스안내</a></li>
+          <li><a href="#">유학경비환전/송금</a></li>
+          <li><a href="#">해외유학지원서비스</a></li>
         </ul>
       </div>
       <div class="menu-column">
-        <h4><a href="#">국내투자</a></h4>
+        <h4><a href="#">이주</a></h4>
         <ul>
-          <li><a href="#">외국인직접투자</a></li>
-          <li><a href="#">외국인/비거주자의 국내증권투자</a></li>
-          <li><a href="#">비거주자의 국내부동산 투자</a></li>
-          <li><a href="#">외국기업의 국내지사</li>
+          <li><a href="#">해외이주서비스안내</a></li>
+          <li><a href="#">해외이주비환전/송금</a></li>
+        </ul>
+      </div>
+      <div class="menu-column">
+        <h4><a href="#">여행</a></h4>
+        <ul>
+          <li><a href="#">여행시유의사항</a></li>
+          <li><a href="#">여행경비환전</a></li>
         </ul>
       </div>
     </div>
 
     <div id="menu6" class="dropdown">
-  <div class="menu-column">
-    <h4><a href="#">고객상담</a></h4>
-    <ul>
-      <li><a href="#">질문과 답변(Q&A)</a></li>
-      <li><a href="#">자주 묻는 질문</a></li>
-      <li><a href="#">챗봇</a></li>
-    </ul>
-  </div>
-  <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
-  <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
-  <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
-  <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
-</div>
+      <div class="menu-column"><h4><a href="#">고객상담</a></h4></div>
+      <div class="menu-column"><h4><a href="#">이용안내</a></h4></div>
+      <div class="menu-column"><h4><a href="#">금융소비자보호</a></h4></div>
+      <div class="menu-column"><h4><a href="#">상품공시실</a></h4></div>
+      <div class="menu-column"><h4><a href="#">자료실</a></h4></div>
+    </div>
 
     <div id="menu7" class="dropdown">
       <div class="menu-column"><h4><a href="#">은행안내</a></h4></div>
@@ -167,28 +163,136 @@
   </div>
 </header>
 
+<main class="step2-container">
+  <!-- 단계 표시 -->
+  <div class="step2-steps">
+    <div class="step2-step">
+      <span class="num">1</span>
+      <span class="text">약관동의</span>
+    </div>
+    <div class="step2-step active">
+      <span class="num">2</span>
+      <span class="text">정보입력</span>
+    </div>
+    <div class="step2-step">
+      <span class="num">3</span>
+      <span class="text">환전완료</span>
+    </div>
+  </div>
 
+  <div class="step2-box">
+    <h2 class="step2-title">환전정보 입력</h2>
+    <p class="step2-subtitle">고객 정보를 확인하고 환전정보를 입력해주세요.</p>
 
+    <form class="step2-form">
 
+      <!-- 통화 및 금액 -->
+      <div class="step2-form-group">
+        <label class="step2-label">통화선택</label>
+        <select id="currencySelect" class="step2-select">
+          <option value="USD">USD (미국 달러)</option>
+          <option value="JPY">JPY (일본 엔)</option>
+          <option value="EUR">EUR (유로화)</option>
+          <option value="CNY">CNY (중국 위안)</option>
+        </select>
+      </div>
 
+      <div class="step2-form-group">
+        <label class="step2-label">환전금액</label>
+        <div class="step2-flex">
+          <input type="number" id="exchangeAmount" class="step2-input short" placeholder="금액 입력 (예: 100)">
+          <button type="button" id="calculateBtn" class="step2-btn-sub">
+            환전예상금액 확인
+          </button>
+        </div>
+      </div>
 
+      <!--  환전 예상금액 영역 -->
+      <div id="exchangeResult" class="step2-result-box" style="display:none;">
+        <h4>환전예상금액</h4>
+        <table class="step2-result-table">
+          <tr>
+            <th>원화금액</th>
+            <td id="result-won">-</td>
+          </tr>
+          <tr>
+            <th>현재고시환율</th>
+            <td id="result-rate">-</td>
+          </tr>
+          <tr>
+            <th>적용환율</th>
+            <td id="result-applied">-</td>
+          </tr>
+        </table>
+      </div>
 
+      <!-- 고객정보 -->
+      <div class="step2-form-group">
+        <label class="step2-label">휴대폰번호</label>
+        <div class="step2-flex">
+          <input type="text" class="step2-input small" placeholder="010">
+          <span>-</span>
+          <input type="text" class="step2-input small">
+          <span>-</span>
+          <input type="text" class="step2-input small">
+        </div>
+      </div>
 
+      <div class="step2-form-group">
+        <label class="step2-label">출금계좌선택</label>
+        <select class="step2-select">
+          <option>104302-04-412952 (잔액 1,000원)</option>
+          <option>104302-04-991142 (잔액 200,000원)</option>
+        </select>
+      </div>
 
+      <div class="step2-form-group">
+        <label class="step2-label">출금계좌비밀번호</label>
+        <input type="password" class="step2-input short" maxlength="4" placeholder="비밀번호 4자리">
+      </div>
 
+      <!-- 수령정보 -->
+      <div class="step2-form-group">
+        <label class="step2-label">수령희망지점</label>
+        <select class="step2-select">
+          <option>인천공항</option>
+          <option>김해공항</option>
+          <option>서울역점</option>
+          <option>부산서면점</option>
+        </select>
+        <p class="step2-note red">※ 신청인 본인만 외화수령이 가능합니다.</p>
 
+        <!-- ✅ 외화ATM에서 찾기 체크박스 -->
+        <label class="step2-checkbox">
+          <input type="checkbox" id="atmCheck"> 외화ATM에서 찾기 (USD만 가능)
+        </label>
+      </div>
 
+      <div class="step2-form-group">
+        <label class="step2-label">수령희망일</label>
+        <input type="date" class="step2-input short">
+        <p class="step2-note">※ 최대 1개월 이내 수령 가능합니다.</p>
+      </div>
 
+      <!-- 환전사유 -->
+      <div class="step2-form-group">
+        <label class="step2-label">환전사유</label>
+        <select class="step2-select">
+          <option>관광, 친지방문 등 일반해외여행경비</option>
+          <option>보유목적</option>
+          <option>유학경비</option>
+          <option>해외체재비</option>
+        </select>
+      </div>
 
+      <!-- 버튼 -->
+      <div class="step2-actions">
+        <button type="button" class="step2-btn-next">다음</button>
+      </div>
 
-
-
-
-
-
-
-
-
+    </form>
+  </div>
+</main>
 
 
 
@@ -236,6 +340,8 @@
   </div>
 </footer>
 
+
+<script src ="/static/js/exchange.js"></script>
 <script src ="/static/js/index.js"></script>
 
 </body>
