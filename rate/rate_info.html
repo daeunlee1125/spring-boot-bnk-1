@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지정환율통지서비스</title>
+  <title>환율 조회</title>
   <link rel="stylesheet" href="/static/css/rate.css"> <!-- 각 카테고리별 css 입력-->
   
 
@@ -17,7 +17,7 @@
 <body>
 
   <!-- 상단 헤더 -->
-  !-- 상단 헤더 -->
+!-- 상단 헤더 -->
   <header>
     <div class="top-bar">
       <ul>
@@ -169,67 +169,65 @@
 </header>
 
 
+<main class="rateinfo-center">
+  <section class="rateinfo-section">
+    <h2>환율 조회</h2>
 
-<main class="rate-container">
-  
-  <!-- 🔹 사이드바 -->
-  <aside class="rate-sidebar">
-    <h3 class="rate-title">환율</h3>
-    <ul class="rate-category">
-
-      <li>
-        <a href="#">환율 제공 서비스</a>
-        <ul class="rate-subcategory">
-          <li><a href="#">환율 조회</a></li>
-          <li class="active"><a href="#">지정환율통지서비스</a></li>
-          <li><a href="#">이메일환율통지서비스</a></li>
-          <li><a href="#">무료환율표서비스</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">외환시장 동향</a></li>
-      <li><a href="#">환리스크 관리</a></li>
-    </ul>
-  </aside>
-
-  <!-- 🔹 본문 영역 -->
-  <section class="rate-content">
-    <h2>지정환율통지서비스 안내</h2>
-    <p class="rate-desc">
-      지정환율통지서비스는 고객님이 원하는 환율 수준에 도달했을 때<br>
-      문자나 이메일로 자동 통지를 받을 수 있는 편리한 서비스입니다.
-    </p>
-
-    <div class="rate-info-box">
-      <h4>📌 주요 특징</h4>
-      <ul>
-        <li>실시간 환율 변동을 자동으로 감지하여 고객에게 알림 제공</li>
-        <li>달러, 유로, 엔화 등 주요 통화 모두 설정 가능</li>
-        <li>영업시간 외에도 자동 통지 기능 제공</li>
-      </ul>
+    <div class="rateinfo-search-box">
+      <label for="rateinfo-date">조회일자</label>
+      <input type="date" id="rateinfo-date" value="2025-11-04">
+      <button class="rateinfo-btn-search">조회</button>
     </div>
 
-    <div class="rate-step-box">
-      <h4>📞 이용 방법</h4>
-      <ol>
-        <li>인터넷뱅킹 또는 모바일앱 접속</li>
-        <li>‘환율서비스 &gt; 지정환율통지서비스’ 선택</li>
-        <li>알림받을 통화 및 목표환율 설정</li>
-        <li>문자 또는 이메일로 통지 수단 선택 후 등록 완료</li>
-      </ol>
-    </div>
+    <h3 class="rateinfo-subtitle">조회결과 <span>조회일자: 2025.11.04 현재</span></h3>
 
-    <p class="rate-note">
-      ※ 본 서비스는 무료로 제공되며, 환율정보는 실시간 시세와 다를 수 있습니다.<br>
-      ※ 일부 통화는 변동성이 커서 알림 지연이 발생할 수 있습니다.
-    </p>
+    <table class="rateinfo-table">
+      <thead>
+        <tr>
+          <th>통화코드</th>
+          <th>통화명</th>
+          <th colspan="2">현찰</th>
+          <th colspan="2">송금(전신환)</th>
+          <th>매매기준율</th>
+          <th>미국달러환산율</th>
+        </tr>
+        <tr class="rateinfo-subhead">
+          <th></th><th></th>
+          <th>사실때</th><th>파실때</th>
+          <th>보내실때</th><th>받으실때</th>
+          <th></th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>USD</td><td>미국(달러)</td><td>1,459.50</td><td>1,416.50</td><td>1,450.90</td><td>1,425.10</td><td>1,438.00</td><td>1.0000</td></tr>
+        <tr><td>CNH</td><td>중국(위안)</td><td>209.46</td><td>193.36</td><td>203.22</td><td>199.60</td><td>201.41</td><td>0.1401</td></tr>
+        <tr><td>JPY</td><td>일본(100엔)</td><td>950.31</td><td>922.23</td><td>944.69</td><td>927.85</td><td>936.27</td><td>0.6511</td></tr>
+        <tr><td>GBP</td><td>영국(파운드)</td><td>1,917.50</td><td>1,860.84</td><td>1,906.17</td><td>1,872.17</td><td>1,889.17</td><td>1.3137</td></tr>
+        <tr><td>EUR</td><td>유럽연합(유로)</td><td>1,681.34</td><td>1,631.66</td><td>1,671.40</td><td>1,641.60</td><td>1,656.50</td><td>1.1519</td></tr>
+        <tr><td>CAD</td><td>캐나다(달러)</td><td>1,043.51</td><td>1,002.59</td><td>1,032.25</td><td>1,013.85</td><td>1,023.05</td><td>0.7114</td></tr>
+        <tr><td>CHF</td><td>스위스(프랑)</td><td>1,806.17</td><td>1,752.79</td><td>1,795.49</td><td>1,763.47</td><td>1,779.48</td><td>1.2375</td></tr>
+        <tr><td>HKD</td><td>홍콩(달러)</td><td>187.79</td><td>182.25</td><td>186.68</td><td>183.36</td><td>185.02</td><td>0.1287</td></tr>
+        <tr><td>SEK</td><td>스웨덴(크로나)</td><td>154.63</td><td>148.57</td><td>152.96</td><td>150.24</td><td>151.60</td><td>0.1054</td></tr>
+        <tr><td>AUD</td><td>호주(달러)</td><td>955.15</td><td>917.71</td><td>944.85</td><td>928.01</td><td>936.43</td><td>0.6512</td></tr>
+        <tr><td>DKK</td><td>덴마크(크로네)</td><td>226.31</td><td>217.45</td><td>223.87</td><td>219.89</td><td>221.88</td><td>0.1543</td></tr>
+        <tr><td>IDR</td><td>인도네시아(100루피아)</td><td>-</td><td>-</td><td>8.67</td><td>8.53</td><td>8.60</td><td>0.0060</td></tr>
+        <tr><td>NOK</td><td>노르웨이(크로네)</td><td>144.84</td><td>139.16</td><td>143.27</td><td>140.73</td><td>142.00</td><td>0.0987</td></tr>
+        <tr><td>SAR</td><td>사우디(리얄)</td><td>402.60</td><td>364.26</td><td>386.88</td><td>379.98</td><td>383.43</td><td>0.2666</td></tr>
+        <tr><td>KWD</td><td>쿠웨이트(디나르)</td><td>4,913.44</td><td>4,445.50</td><td>4,721.58</td><td>4,637.36</td><td>4,679.47</td><td>3.2542</td></tr>
+        <tr><td>BHD</td><td>바레인(디나르)</td><td>4,005.03</td><td>3,623.61</td><td>3,848.64</td><td>3,780.00</td><td>3,814.32</td><td>2.6525</td></tr>
+        <tr><td>AED</td><td>아랍에미리트(디르함)</td><td>411.13</td><td>371.99</td><td>395.08</td><td>388.04</td><td>391.56</td><td>0.2723</td></tr>
+        <tr><td>SGD</td><td>싱가포르(달러)</td><td>1,124.25</td><td>1,080.17</td><td>1,112.12</td><td>1,092.30</td><td>1,102.21</td><td>0.7665</td></tr>
+        <tr><td>MYR</td><td>말레이시아(링기트)</td><td>-</td><td>-</td><td>345.50</td><td>339.34</td><td>342.42</td><td>0.2381</td></tr>
+        <tr><td>NZD</td><td>뉴질랜드(달러)</td><td>833.70</td><td>801.02</td><td>824.71</td><td>810.01</td><td>817.36</td><td>0.5684</td></tr>
+        <tr><td>THB</td><td>태국(바트)</td><td>-</td><td>-</td><td>44.68</td><td>43.90</td><td>44.29</td><td>0.0308</td></tr>
+        <tr><td>MXN</td><td>멕시코(페소)</td><td>-</td><td>-</td><td>78.46</td><td>77.08</td><td>77.77</td><td>0.0541</td></tr>
+        <tr><td>TRY</td><td>터키(리라)</td><td>-</td><td>-</td><td>34.48</td><td>33.88</td><td>34.18</td><td>0.0238</td></tr>
+        <tr><td>ZAR</td><td>남아공(랜드)</td><td>-</td><td>-</td><td>83.78</td><td>82.30</td><td>83.04</td><td>0.0577</td></tr>
+      </tbody>
+    </table>
   </section>
 
 </main>
-
-
-
-
 
 
 

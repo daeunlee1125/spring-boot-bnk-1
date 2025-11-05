@@ -428,3 +428,200 @@ footer {
   color: #777;
   line-height: 1.6;
 }
+
+
+/* =============================================
+   환율 조회 페이지 (rate_info)
+   ============================================= */
+
+/* 페이지 전체 레이아웃 */
+.rateinfo-layout {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 50px 80px;
+  background: #fff;
+  align-items: flex-start;
+}
+
+/* 사이드바는 그대로 유지 */
+.rateinfo-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 10px;
+  padding: 25px 20px;
+  height: fit-content;
+}
+
+/* 🔹 본문 — 컨테이너 스타일 제거 */
+.rateinfo-section {
+  flex: 1;
+  padding: 0 10px; /* 내부 여백만 남김 */
+}
+
+/* 제목 */
+.rateinfo-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 10px;
+}
+
+/* 조회일자 박스 */
+.rateinfo-search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rateinfo-date-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.rateinfo-btn-search {
+  background: #2C5DE5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.rateinfo-btn-search:hover {
+  background: #2048c8;
+}
+
+/* 조회결과 제목 */
+.rateinfo-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #22304E;
+  margin-bottom: 15px;
+  padding-left: 4px;
+  border-left: 4px solid #2C5DE5;
+}
+
+.rateinfo-subtitle span {
+  font-size: 13px;
+  color: #666;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+/* 테이블 */
+.rateinfo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+  border-top: 2px solid #2C5DE5; /* 상단 강조선 */
+}
+
+.rateinfo-table th {
+  background: #f8f9fb;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.rateinfo-table td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  color: #444;
+}
+
+.rateinfo-btn-detail {
+  background: #fff;
+  border: 1px solid #2C5DE5;
+  color: #2C5DE5;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rateinfo-btn-detail:hover {
+  background: #2C5DE5;
+  color: #fff;
+}
+
+/* =============================================
+   환율 조회 중앙 정렬 버전
+   ============================================= */
+.rateinfo-center {
+  display: flex;
+  justify-content: center;  /* 가로 가운데 */
+  padding: 60px 0;
+  background: #fff;
+}
+
+.rateinfo-section {
+  width: 80%;
+  max-width: 1000px;
+  background: #fff;
+}
+
+.rateinfo-section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #22304E;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #E3E7EC;
+  padding-bottom: 10px;
+}
+
+.rateinfo-search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.rateinfo-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #22304E;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.rateinfo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+  border-top: 2px solid #2C5DE5;
+}
+
+.rateinfo-table th {
+  background: #f8f9fb;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  font-weight: 700;
+  color: #333;
+}
+
+.rateinfo-table td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  color: #444;
+}
+
+/* 행 hover 효과 */
+.rateinfo-table tr:hover {
+  background: #f7faff;
+}
