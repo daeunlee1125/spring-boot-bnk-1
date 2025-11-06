@@ -1,40 +1,42 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".main-nav");
+  const menuItems = document.querySelectorAll(".menu-item");
+  const megaMenu = document.querySelector(".mega-menu");
+  const groups = document.querySelectorAll(".menu-group");
 
-// 상단 메인메뉴 js ///////////////////////////////////////////////////////////////////////////
+  if (!nav || !menuItems.length || !megaMenu) {
+    console.error("❌ 메뉴 요소를 찾지 못했습니다.");
+    return;
+  }
 
-const menuItems = document.querySelectorAll(".menu-item");
-const dropdowns = document.querySelectorAll(".dropdown");
-
-// 현재 열려 있는 메뉴 추적
-let currentDropdown = null;
-
-menuItems.forEach(item => {
-  const targetId = item.dataset.target;
-  const dropdown = document.getElementById(targetId);
-
-  // 🔹 1차 카테고리에 마우스 올렸을 때
-  item.addEventListener("mouseenter", () => {
-    dropdowns.forEach(d => d.classList.remove("show"));
-    dropdown.classList.add("show");
-    currentDropdown = dropdown;
+  // ✅ hover 시 열림
+  menuItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      megaMenu.classList.add("show");
+      menuItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+    });
   });
 
-  // 🔹 드롭다운으로 마우스 들어왔을 때 닫히지 않도록 유지
-  dropdown.addEventListener("mouseenter", () => {
-    dropdown.classList.add("show");
-  });
+  // ✅ header와 mega-menu를 벗어나면 닫힘
+  document.addEventListener("mousemove", e => {
+    const navRect = nav.getBoundingClientRect();
+    const menuRect = megaMenu.getBoundingClientRect();
 
-  // 🔹 드롭다운 벗어났을 때 닫기
-  dropdown.addEventListener("mouseleave", () => {
-    dropdown.classList.remove("show");
-    currentDropdown = null;
+    const inside =
+      e.clientX >= Math.min(navRect.left, menuRect.left) &&
+      e.clientX <= Math.max(navRect.right, menuRect.right) &&
+      e.clientY >= Math.min(navRect.top, menuRect.top) &&
+      e.clientY <= Math.max(navRect.bottom, menuRect.bottom);
+
+    if (!inside) {
+      megaMenu.classList.remove("show");
+      menuItems.forEach(i => i.classList.remove("active"));
+    }
   });
 });
 
-// 🔹 메뉴 전체(nav + dropdown) 영역에서 벗어날 때만 닫기
-document.querySelector("header").addEventListener("mouseleave", () => {
-  dropdowns.forEach(d => d.classList.remove("show"));
-  currentDropdown = null;
-});
+
 
 
 
@@ -48,13 +50,18 @@ window.addEventListener("load", () => {
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
 
+  // ✅ width 자동 계산
+  slideWrapper.style.width = `${slides.length * 100}%`;
+  slides.forEach(slide => (slide.style.flex = `0 0 ${100 / slides.length}%`));
+
   let current = 0;
   let slideInterval;
-  const intervalTime = 3000; // 3초
+
+  const intervalTime = 3000; // 7초마다 이동
 
   function showSlide(index) {
-    slideWrapper.style.transition = "transform 1s ease-in-out";
-    slideWrapper.style.transform = `translateX(-${index * 100}%)`;
+    slideWrapper.style.transition = "transform 0.8s ease-in-out";
+    slideWrapper.style.transform = `translateX(-${index * (100 / slides.length)}%)`; // ✅ 계산 보정
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
   }
@@ -77,18 +84,18 @@ window.addEventListener("load", () => {
     clearInterval(slideInterval);
   }
 
+  slideWrapper.addEventListener("mouseenter", stopAutoSlide);
+  slideWrapper.addEventListener("mouseleave", startAutoSlide);
   nextBtn.addEventListener("click", () => {
     nextSlide();
     stopAutoSlide();
     startAutoSlide();
   });
-
   prevBtn.addEventListener("click", () => {
     prevSlide();
     stopAutoSlide();
     startAutoSlide();
   });
-
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       current = index;
@@ -100,66 +107,4 @@ window.addEventListener("load", () => {
 
   showSlide(current);
   startAutoSlide();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////
-
-// mypage js
-
-////////////////////////////////////////////////////////////////////////////
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("toggleCurrencies");
-  const hiddenCurrencies = document.querySelectorAll(".currency-card.hidden");
-
-  let expanded = false;
-
-  toggleBtn.addEventListener("click", () => {
-    expanded = !expanded;
-
-    hiddenCurrencies.forEach(card => {
-      card.style.display = expanded ? "block" : "none";
-    });
-
-    toggleBtn.textContent = expanded ? "− 접기" : "+ 더보기";
-  });
-});
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////
-
-// member.terms(약관페이지)
-
-////////////////////////////////////////////////////////////////////////////
-
-// 전체 동의 체크박스
-const agreeAll = document.getElementById('agreeAll');
-const checkboxes = document.querySelectorAll('.terms-check input');
-
-agreeAll.addEventListener('change', () => {
-  checkboxes.forEach(chk => chk.checked = agreeAll.checked);
-});
-
-// 개별 체크 시 전체동의 자동 상태 반영
-checkboxes.forEach(chk => {
-  chk.addEventListener('change', () => {
-    agreeAll.checked = [...checkboxes].every(c => c.checked);
-  });
 });

@@ -1,3 +1,6 @@
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,121 +61,128 @@ body {
 
 
 
-/* 상단 네비게이션 */
+header {
+  position: relative; /* ✅ 기준점 명시 */
+  z-index: 999;
+}
+
+
 .main-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 80px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  position: relative;
+  justify-content: center; /* 메뉴 기준 가운데 */
+}
+
+/* 메뉴 중앙정렬 */
+.nav-menu {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 70px !important; /* ✅ 강제 적용 */
+}
+
+
+/* 로고 */
+.logo {
+  position: absolute;
+  left: 300px;  /* 화면 왼쪽에서 띄우기 */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .logo img {
-  height: 40px;
+  height: 60px;
 }
 
 
-/* 🔹 nav 기본 스타일 */
+
+/* nav-icons만 오른쪽 끝으로 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute; 
+  right: 80px;       
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+/* ✅ Mega 메뉴 전체 박스 */
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* nav 바로 밑 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%; /* 중앙 기준 폭 */
+  background: #fff;
+  border-top: 2px solid #2C5DE5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 40px 0 60px; /* 위아래 여백 */
+  z-index: 9999;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mega-menu.show {
+  display: flex !important; /* 열릴 때만 flex 활성화 */
+}
+
+/* ✅ 각 그룹은 내부 정렬만 담당 */
+.menu-group {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ✅ 각 항목 스타일 */
+.menu-group a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.menu-group a:hover {
+  color: #2C5DE5;
+}
+
+/* 상단 메뉴 */
+/* 메뉴는 완전 중앙정렬 */
 .nav-menu {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
   list-style: none;
-  gap: 40px;
-  position: relative;
-  margin: 0;
-  padding: 0;
+  flex: none; /* ✅ flex:1 제거 — 중앙정렬 깨짐 방지 */
 }
 
-.nav-menu > li {
-  position: relative;
-}
 
-.nav-menu > li > a {
-  text-decoration: none;
-  color: #111;
+
+.menu-item {
+  cursor: pointer;
+  padding: 10px 15px;
   font-weight: 600;
-  padding: 15px;
-  display: inline-block;
-  transition: color 0.2s ease;
+  color: #222;
+  transition: color 0.2s;
 }
 
-..nav-menu > li > a:hover {
-  color: #4A6FA5; /* 포인트 컬러 */
+.menu-item.active {
+  color: #2C5DE5;
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 50%; /* 중앙 기준 */
-  transform: translateX(-50%) translateY(10px);
-  width: 1100px; /* ✅ 모든 메뉴 폭 고정 */
-  background: #fff;
-  border-top: 2px solid #4A6FA5; /* 포인트 컬러 */
-  display: none;
-  justify-content: flex-start;
-  gap: 60px;
-  padding: 30px 50px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  opacity: 0;
-  transition: all 0.25s ease;
-  z-index: 100;
-}
-
-
-.dropdown.show {
-  display: flex;
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* 🔹 2차 카테고리 */
-.menu-column {
-  min-width: 180px;
-}
-
-.menu-column h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
-}
-
-.menu-column h4 a {
-  text-decoration: none;
-  color: #111;
-  transition: color 0.2s ease;
-}
-
-.menu-column h4 a:hover {
-  color: #4A6FA5; 
-}
-/* 🔹 3차 카테고리 */
-.menu-column ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-column li {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 6px;
-}
-
-.menu-column li a {
-  text-decoration: none;
-  color: #777;
-  transition: color 0.2s ease;
-}
-
-.menu-column li a:hover {
-  color: #4A6FA5;
-}
-
+/*/////////////////////////////////////////////////////////////////////
 
 
 /* FontAwesome 기본 스타일 */
+/* 아이콘 오른쪽 정렬 */
 .nav-icons {
   display: flex;
   align-items: center;
@@ -254,20 +264,22 @@ body {
 
 .slide {
   flex: 0 0 100%;
-  height: 380px;       /* 동일 높이 유지 */
+  height: 380px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #fff; /* 사이트 톤에 맞춰 배경색 맞추기 */
+  overflow: hidden;
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* 화면 가득 채움 */
+  max-width: 1000px;   /* ✅ 원본 가로 크기 유지 */
+  max-height: 380px;   /* ✅ 원본 세로 크기 유지 */
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* ✅ 잘리지 않게 비율 유지 */
   display: block;
 }
-
 
 /* 버튼 */
 .prev, .next {
@@ -320,30 +332,117 @@ body {
 
 
 
-/* 🔹 오른쪽 빠른메뉴 */
-.quick-menu {
-  width: 360px;
-  min-width: 320px;
+
+/* 푸터 */
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 40px 0 60px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #2C5DE5; /* FLOBANK 포인트컬러 */
+}
+
+/* 상단 링크 */
+.footer-top {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.footer-location {
+  font-size: 13px;
+  color: #777;
+}
+
+/* 중간 상담번호 & 카피라이트 */
+.footer-middle {
+  margin: 15px 0;
+}
+
+.footer-call {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: #777;
+}
+
+/* 하단 영역 */
+.footer-bottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* ✅ 세로 배치 */
+  justify-content: center;
   align-items: center;
+  gap: 15px; /* 아이콘과 마크 간 간격 */
+  max-width: 1200px;
+  margin: 25px auto 0;
+  padding-top: 0; /* ✅ 위 여백 제거 */
+  border-top: none; /* ✅ 선 제거 */
 }
 
-.quick-top {
+
+.footer-left {
   display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
+  align-items: center;
+  justify-content: center; /* ✅ 가운데 정렬 */
+  gap: 20px;
 }
 
-.quick-top button {
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  padding: 18px 45px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
+/* 인증마크 크기 조정 */
+.footer-cert {
+  height: 50px; /* ✅ 조금 더 작게 */
+  opacity: 0.9;
+  transition: transform 0.2s ease;
 }
+
+
+.footer-cert:hover {
+  transform: scale(1.05);
+}
+
+/* SNS 아이콘 */
+.footer-sns a {
+  color: #2C3E91; /* ✅ 남색 */
+  margin: 0 8px;
+  font-size: 19px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-sns a:hover {
+  color: #1E2C80;
+  transform: scale(1.1);
+}
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////
+/* 헤더푸터 모두 동일 이까지
+///////////////////////////////////////////////////////////////////////*/
+
+
+
+
 
 .btn-query {
   background: linear-gradient(135deg, #6A8DC4, #4A6FA5); /* 스틸블루 계열 그라데이션 */
@@ -488,114 +587,3 @@ body {
   color: #009688;
   text-decoration: none;
 }
-
-.more a:hover
-
-
-
-
-
-
-
-/* 푸터 */
-
-footer {
-  margin-top: 60px;
-}
-
-
-.footer {
-  background: #f8f8f8;
-  border-top: 1px solid #e5e5e5; 
-  box-shadow: none;
-  padding: 60px 0 70px 0;
-  margin-top: 0; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: #333;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-
-/* 링크들 중앙정렬 */
-.footer-links {
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.footer-links a {
-  color: #444;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* 중앙 로고 + 저작권 + 연락처 */
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 30px; /* ✅ 하단 버튼과 간격 확보 */
-}
-
-/* 로고 그룹 */
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.footer-logos img {
-  height: 35px;
-  opacity: 0.9;
-}
-
-/* 저작권 */
-.footer-info p {
-  font-size: 13px;
-  color: #666;
-}
-
-/* 연락처 */
-.footer-right p {
-  margin: 3px 0;
-  font-size: 14px;
-}
-
-.footer-right strong {
-  color: #222;
-  font-weight: 700;
-}
-
-/* 하단 버튼들 */
-.footer-bottom-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.bottom-item {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 8px 18px;
-  cursor: pointer;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.bottom-item:hover {
-  background: #f1f1f1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-}
-
-
-
