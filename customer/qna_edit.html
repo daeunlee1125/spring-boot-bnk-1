@@ -198,56 +198,33 @@
 
   <!-- 🔹 본문 -->
 <section class="customer-content">
-  <h2>질문과 답변(Q&A)</h2>
+  <h2>질문 수정</h2>
 
-  <div class="qna-board">
-    <!-- 🔹 상단 -->
-    <div class="board-top">
-      <p class="board-count">총 <strong>12</strong>건의 문의가 있습니다.</p>
-      <a href="qnaWrite.html" class="btn-write">
-        <i class="fa-solid fa-pen"></i> 문의 등록
+  <form class="qna-form">
+    <label for="title">제목</label>
+    <input id="title" type="text" value="해외송금 수수료는 얼마인가요?">
+
+    <label for="writer">작성자</label>
+    <input id="writer" type="text" value="홍길동" readonly>
+
+    <label for="content">내용</label>
+    <textarea id="content" rows="8">
+해외송금 시 수수료는 거래 금액과 국가에 따라 다릅니다.
+자세한 내용은 ‘외화송금안내’ 페이지에서 확인 가능합니다.
+    </textarea>
+
+    <div class="form-buttons">
+      <button type="submit" class="btn-submit">
+        <i class="fa-solid fa-pen-to-square"></i> 수정 완료
+      </button>
+      <a href="qnaList.html" class="btn-cancel">
+        <i class="fa-solid fa-rotate-left"></i> 취소
       </a>
     </div>
-
-    <!-- 🔹 게시판 테이블 -->
-    <table class="board-table">
-      <thead>
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>등록일</th>
-          <th>조회수</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>12</td>
-          <td><a href="qnaView.html">해외송금 수수료는 얼마인가요?</a></td>
-          <td>홍길동</td>
-          <td>2025-11-06</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td><a href="qnaView.html">외화예금 금리 문의</a></td>
-          <td>user01</td>
-          <td>2025-11-05</td>
-          <td>48</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- 🔹 페이징 -->
-    <div class="pagination">
-      <a href="#" class="prev">〈 이전</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#" class="next">다음 〉</a>
-    </div>
-  </div>
+  </form>
 </section>
+
+
 
 
    
