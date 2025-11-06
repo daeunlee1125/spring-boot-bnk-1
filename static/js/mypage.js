@@ -1,3 +1,29 @@
+///////////////////////////////////////////////////////////////////////////
+
+// mypage js
+
+////////////////////////////////////////////////////////////////////////////
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggleCurrencies");
+  const hiddenCurrencies = document.querySelectorAll(".currency-card.hidden");
+
+  let expanded = false;
+
+  toggleBtn.addEventListener("click", () => {
+    expanded = !expanded;
+
+    hiddenCurrencies.forEach(card => {
+      card.style.display = expanded ? "block" : "none";
+    });
+
+    toggleBtn.textContent = expanded ? "− 접기" : "+ 더보기";
+  });
+});
+
+
+
 
 // 계좌개설 약관 동의 페이지 JS 
 
