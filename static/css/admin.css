@@ -1,10 +1,11 @@
 :root {
-  --primary-color: #0b4da2;
-  --secondary-color: #f0f6ff;
-  --accent-color: #00a8ff;
+  --primary-color: #22304e;
+  --secondary-color: #e3e7ec;
+  --accent-color: #4a6fa5;
+  --background-color: #f5f5f5;
   --text-color: #1f2933;
   --border-radius: 12px;
-  --shadow: 0 10px 30px rgba(7, 26, 59, 0.12);
+  --shadow: 0 10px 30px rgba(34, 48, 78, 0.12);
 }
 
 * {
@@ -15,7 +16,7 @@ body {
   margin: 0;
   font-family: "Noto Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background-color: #f6f8fb;
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -26,7 +27,7 @@ body {
 }
 
 .sidebar {
-  background: linear-gradient(180deg, #0b4da2 0%, #082f6b 100%);
+  background: linear-gradient(180deg, var(--primary-color) 0%, #1a263b 100%);
   color: #fff;
   padding: 32px 28px;
   display: flex;
@@ -121,7 +122,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e6ecf5;
+  border-bottom: 1px solid #d5dae2;
 }
 
 .admin-header .page-title {
@@ -132,7 +133,7 @@ body {
 
 .admin-header .page-subtitle {
   margin-top: 8px;
-  color: #5a6a85;
+  color: #4f5d73;
   font-size: 15px;
 }
 
@@ -143,7 +144,7 @@ body {
 }
 
 .admin-header .user-info .status {
-  background: var(--secondary-color);
+  background: rgba(227, 231, 236, 0.6);
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 14px;
@@ -210,7 +211,7 @@ body {
 .stat-card {
   border-radius: 16px;
   padding: 24px;
-  background: linear-gradient(135deg, #fff 0%, #eff6ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--secondary-color) 100%);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -224,7 +225,7 @@ body {
   inset: 0;
   background: radial-gradient(
     circle at top right,
-    rgba(11, 77, 162, 0.08),
+    rgba(74, 111, 165, 0.12),
     transparent 60%
   );
 }
@@ -232,7 +233,7 @@ body {
 .stat-card h3 {
   margin: 0;
   font-size: 15px;
-  color: #5a6a85;
+  color: #4f5d73;
 }
 
 .stat-card .value {
@@ -245,7 +246,7 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #3d8bff;
+  color: var(--accent-color);
 }
 
 .stat-card .icon {
@@ -254,8 +255,8 @@ body {
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: rgba(11, 77, 162, 0.12);
-  color: var(--primary-color);
+  background: rgba(74, 111, 165, 0.15);
+  color: #fff;
   font-size: 18px;
 }
 
@@ -271,15 +272,15 @@ body {
 .table thead th {
   text-align: left;
   font-size: 14px;
-  color: #5a6a85;
+  color: #4f5d73;
   padding-bottom: 12px;
-  border-bottom: 1px solid #e6ecf5;
+  border-bottom: 1px solid #d5dae2;
 }
 
 .table tbody td {
   padding: 14px 0;
   font-size: 15px;
-  border-bottom: 1px solid #f0f3f7;
+  border-bottom: 1px solid rgba(227, 231, 236, 0.7);
 }
 
 .status-badge {
@@ -302,8 +303,8 @@ body {
 }
 
 .status-badge.info {
-  background: rgba(59, 130, 246, 0.12);
-  color: #2563eb;
+  background: rgba(74, 111, 165, 0.16);
+  color: var(--accent-color);
 }
 
 .text-green {
@@ -314,7 +315,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(11, 77, 162, 0.12);
+  background: rgba(74, 111, 165, 0.16);
   color: var(--primary-color);
   padding: 6px 12px;
   border-radius: 999px;
@@ -350,8 +351,8 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(11, 77, 162, 0.12);
+  background: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.16);
 }
 
 .timeline li strong {
@@ -361,7 +362,7 @@ body {
 }
 
 .timeline li span {
-  color: #5a6a85;
+  color: #56637a;
   font-size: 13px;
 }
 
@@ -395,13 +396,13 @@ body {
 .control-group label {
   font-size: 14px;
   font-weight: 600;
-  color: #334155;
+  color: #2b3342;
 }
 
 .control-group input,
 .control-group select,
 .control-group textarea {
-  border: 1px solid #d6deeb;
+  border: 1px solid #c3c9d3;
   border-radius: 10px;
   padding: 12px 14px;
   font-size: 14px;
@@ -428,7 +429,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 20px rgba(11, 77, 162, 0.18);
+  box-shadow: 0 12px 20px rgba(34, 48, 78, 0.18);
 }
 
 .filter-bar {
@@ -441,7 +442,7 @@ body {
 
 .filter-bar input,
 .filter-bar select {
-  border: 1px solid #d6deeb;
+  border: 1px solid #c3c9d3;
   border-radius: 999px;
   padding: 10px 16px;
   font-size: 14px;
@@ -449,19 +450,19 @@ body {
 
 .label {
   font-size: 13px;
-  color: #5a6a85;
+  color: #4f5d73;
   font-weight: 500;
 }
 
 .empty-state {
   text-align: center;
   padding: 40px 20px;
-  color: #64748b;
+  color: #56637a;
 }
 
 .empty-state i {
   font-size: 40px;
-  color: rgba(11, 77, 162, 0.35);
+  color: rgba(74, 111, 165, 0.35);
   margin-bottom: 12px;
 }
 
